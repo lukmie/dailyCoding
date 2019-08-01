@@ -1,4 +1,4 @@
-package com.lukmie.exe2;
+package com.lukmie.exe2_quadratic;
 
 import java.util.Scanner;
 
