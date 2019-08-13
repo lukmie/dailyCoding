@@ -9,6 +9,7 @@ public class Exercise15 {
 
     public static void main(String[] args) {
         oddSum();
+
     }
 
     private static int getData() {
