@@ -31,7 +31,7 @@ public class Exercise1 {
     }
 
     public static void sortStringArray(String[] array) {
-        String temp = "";
+        String temp;
         int count = 1;
         while (count > 0) {
             count = 0;
