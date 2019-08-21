@@ -9,5 +9,8 @@
         <module name="Array" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Array" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
