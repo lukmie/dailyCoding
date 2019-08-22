@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88cdcc12-bcea-4cef-bf57-e79e616e35fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4a3fae79-b427-4ce1-b4b5-77bd28caa200" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Array.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Array.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Array.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lukmie/exe4_avgValArray/Exercise4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lukmie/exe4_avgValArray/Exercise4.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,31 +16,26 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukmie/exe3_displayGrid/Exercise3.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukmie/exe2_sumValuesInArray/Exercise2.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukmie/exe4_avgValArray/Exercise4.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="65" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="65" />
+              <caret line="4" column="66" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="66" />
+              <folding>
+                <element signature="e#175#176#0" expanded="true" />
+                <element signature="e#230#231#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukmie/exe4_avgValArray/Exercise4.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lukmie/exe5_containsAValue/Exercise5.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+              <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
               <folding>
                 <element signature="e#178#179#0" expanded="true" />
-                <element signature="e#214#215#0" expanded="true" />
+                <element signature="e#233#234#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,6 +57,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/lukmie/exe4_avgValArray/Exercise4.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lukmie/exe5_containsAValue/Exercise5.java" />
       </list>
     </option>
   </component>
@@ -80,6 +75,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,7 +116,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="lukmie" type="462c0819:PsiDirectoryNode" />
-              <item name="exe2_sumValuesInArray" type="462c0819:PsiDirectoryNode" />
+              <item name="exe4_avgValArray" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Array" type="b2602c69:ProjectViewProjectNode" />
@@ -129,20 +125,19 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="lukmie" type="462c0819:PsiDirectoryNode" />
-              <item name="exe4_avgValArray" type="462c0819:PsiDirectoryNode" />
+              <item name="exe5_containsAValue" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566422682732" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566506932564" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -159,12 +154,12 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Exercise4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.lukmie.exe4_avgValArray.Exercise4" />
+    <configuration name="Exercise5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lukmie.exe5_containsAValue.Exercise5" />
       <module name="Array" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lukmie.exe4_avgValArray.*" />
+          <option name="PATTERN" value="com.lukmie.exe5_containsAValue.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -174,7 +169,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Exercise4" />
+        <item itemvalue="Application.Exercise5" />
       </list>
     </recent_temporary>
   </component>
@@ -183,17 +178,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="88cdcc12-bcea-4cef-bf57-e79e616e35fb" name="Default Changelist" comment="" />
-      <created>1566417511912</created>
+      <changelist id="4a3fae79-b427-4ce1-b4b5-77bd28caa200" name="Default Changelist" comment="" />
+      <created>1566506392137</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1566417511912</updated>
-      <workItem from="1566417513381" duration="865000" />
+      <updated>1566506392137</updated>
+      <workItem from="1566506393777" duration="539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="865000" />
+    <option name="totallyTimeSpent" value="539000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -233,34 +228,24 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukmie/exe1_sortArrays/Exercise1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukmie/exe3_displayGrid/Exercise3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukmie/exe2_sumValuesInArray/Exercise2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="65" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lukmie/exe4_avgValArray/Exercise4.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="66" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="66" />
+          <folding>
+            <element signature="e#175#176#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lukmie/exe5_containsAValue/Exercise5.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
           <folding>
             <element signature="e#178#179#0" expanded="true" />
-            <element signature="e#214#215#0" expanded="true" />
+            <element signature="e#233#234#0" expanded="true" />
           </folding>
         </state>
       </provider>

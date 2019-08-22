@@ -10,7 +10,7 @@ public class Exercise4 {
 
     public static double avgValArray(int[] array) {
         double sum = 0;
-        double avg = 0;
+        double avg;
         for (int i = 0; i < array.length; i++) {
             sum += array[i];
         }
