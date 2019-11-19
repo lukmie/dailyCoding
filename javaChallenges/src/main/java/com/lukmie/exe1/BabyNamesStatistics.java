@@ -3,11 +3,9 @@ package com.lukmie.exe1;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class BabyNamesStatistics {
     private String fileName;
@@ -17,25 +15,35 @@ public class BabyNamesStatistics {
     }
 
     public Map<String, Integer> showMostPopularNames(int topNNames) throws IOException {
-        Map<String, Integer> unsorted = convertFileToList("FEMALE", "MALE");
-        return unsorted.entrySet().stream()
+
+        LinkedHashMap<String, Integer> maleMap = sortMapsByValue(topNNames, babyNamesMapByGender("MALE"));
+        LinkedHashMap<String, Integer> femaleMap = sortMapsByValue(topNNames, babyNamesMapByGender("FEMALE"));
+
+        Map<String, Integer> mostPopularNames = Stream.of(maleMap, femaleMap)
+                .map(Map::entrySet)
+                .flatMap(Collection::stream)
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, Integer::max));
+        return sortMapsByValue(topNNames, mostPopularNames);
+    }
+
+    private LinkedHashMap<String, Integer> sortMapsByValue(int topNNames, Map<String, Integer> map) {
+        return map.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .limit(topNNames)
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new));
     }
 
-    public Map<String, Integer> showMostPopularGirlName() throws IOException {
-        Map<String, Integer> unsorted = convertFileToList("FEMALE", "");
-        return unsorted.entrySet().stream()
+    public Map<String, Integer> showMostPopularGirlName(int topNNames) throws IOException {
+        return babyNamesMapByGender("FEMALE").entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                .limit(1)
+                .limit(topNNames)
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new));
     }
 
     public Map<String, Integer> showMostPopularLetter() throws IOException {
-        List<PersonalData> personList = Files.lines(Paths.get("Popular_Baby_Names.csv"))
+        List<PersonalData> personList = Files.lines(Paths.get(fileName))
                 .map(p -> new PersonalData(p.split(",")[1], p.split(",")[3], Integer.parseInt(p.split(",")[4])))
                 .collect(Collectors.toList());
 
@@ -49,17 +57,15 @@ public class BabyNamesStatistics {
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new));
     }
 
-    private Map<String, Integer> convertFileToList(String... gender) throws IOException {
-        List<PersonalData> personList = Files.lines(Paths.get(fileName))
-                .map(p -> new PersonalData(p.split(",")[1], p.split(",")[3], Integer.parseInt(p.split(",")[4])))
-                .filter(g -> g.getGender().equals("FEMALE"))
-                .collect(Collectors.toList());
-
-        return convertListToBabyFemaleNamesMap(personList);
+    private Map<String, Integer> babyNamesMapByGender(String gender) throws IOException {
+        return convertSourceFileToList().stream()
+                .filter(g -> g.getGender().equals(gender.toUpperCase()))
+                .collect(Collectors.groupingBy(p -> p.getName().toUpperCase(), Collectors.summingInt(PersonalData::getCount)));
     }
 
-    private Map<String, Integer> convertListToBabyFemaleNamesMap(List<PersonalData> personList) {
-        return personList.stream()
-                .collect(Collectors.groupingBy(p -> p.getName().toUpperCase(), Collectors.summingInt(PersonalData::getCount)));
+    private List<PersonalData> convertSourceFileToList() throws IOException {
+        return Files.lines(Paths.get(fileName))
+                .map(p -> new PersonalData(p.split(",")[1], p.split(",")[3], Integer.parseInt(p.split(",")[4])))
+                .collect(Collectors.toList());
     }
 }
