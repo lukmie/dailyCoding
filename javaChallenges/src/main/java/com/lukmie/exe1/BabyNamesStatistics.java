@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -23,6 +24,11 @@ public class BabyNamesStatistics {
                 .map(Map::entrySet)
                 .flatMap(Collection::stream)
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, Integer::max));
+
+        maleMap.forEach(
+                (key, value) -> femaleMap.merge(key, value, (v1, v2) -> v1.equals(v2) ? v1 : v1 + v2)
+        );
+        System.out.println("****" + sortMapsByValue(topNNames, femaleMap));
         return sortMapsByValue(topNNames, mostPopularNames);
     }
 
@@ -58,9 +64,12 @@ public class BabyNamesStatistics {
     }
 
     private Map<String, Integer> babyNamesMapByGender(String gender) throws IOException {
-        return convertSourceFileToList().stream()
+//        return convertSourceFileToList().stream()
+//                .filter(g -> g.getGender().equals(gender.toUpperCase()))
+//                .collect(Collectors.groupingBy(p -> p.getName().toUpperCase(), Collectors.summingInt(PersonalData::getCount)));
+        Map<PersonalData, Integer> collect = convertSourceFileToList().stream()
                 .filter(g -> g.getGender().equals(gender.toUpperCase()))
-                .collect(Collectors.groupingBy(p -> p.getName().toUpperCase(), Collectors.summingInt(PersonalData::getCount)));
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(PersonalData::getCount)));
     }
 
     private List<PersonalData> convertSourceFileToList() throws IOException {
