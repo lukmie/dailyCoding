@@ -64,12 +64,12 @@ public class BabyNamesStatistics {
     }
 
     private Map<String, Integer> babyNamesMapByGender(String gender) throws IOException {
-//        return convertSourceFileToList().stream()
-//                .filter(g -> g.getGender().equals(gender.toUpperCase()))
-//                .collect(Collectors.groupingBy(p -> p.getName().toUpperCase(), Collectors.summingInt(PersonalData::getCount)));
-        Map<PersonalData, Integer> collect = convertSourceFileToList().stream()
+        return convertSourceFileToList().stream()
                 .filter(g -> g.getGender().equals(gender.toUpperCase()))
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(PersonalData::getCount)));
+                .collect(Collectors.groupingBy(p -> p.getName().toUpperCase(), Collectors.summingInt(PersonalData::getCount)));
+//        Map<PersonalData, Integer> collect = convertSourceFileToList().stream()
+//                .filter(g -> g.getGender().equals(gender.toUpperCase()))
+//                .collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(PersonalData::getCount)));
     }
 
     private List<PersonalData> convertSourceFileToList() throws IOException {
