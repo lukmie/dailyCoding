@@ -10,7 +10,7 @@ public class Main {
             new Comment("Leniwe przetwarzanie, mega :)"));
 
     public static final Post POST_2 = new Post("Nowe API dla plików NIO",
-            "java 8, file api,nio api", 7220);
+            "java 8, file api, nio api", 7220);
 
     public static final Post POST_3 = new Post("Przetwarzanie równoległe strumieni",
             "JAVA 8,STRUMIENIE", 3125,
@@ -28,7 +28,10 @@ public class Main {
 //        met2c();
 //        met3();
 //        met4();
-        met5();
+//        met5();
+//        met10();
+//        met13();
+        met15();
 
     }
 
@@ -80,5 +83,77 @@ public class Main {
                 .filter(post -> post.getAmountOfSigns() < 500)
                 .map(Post::getSubject)
                 .forEach(System.out::println);
+    }
+
+    public static void met6() {
+        posts.stream()
+                .filter(post -> post.getSubject().contains("Java"))
+                .map(Post::getSubject)
+                .forEach(System.out::println);
+    }
+
+    public static void met7() {
+        boolean allHaveLetterA = posts.stream()
+                .allMatch(post -> post.getSubject().contains("a"));
+        System.out.println(allHaveLetterA);
+    }
+
+    public static void met8() {
+        boolean over5k = posts.stream()
+                .anyMatch(post -> post.getAmountOfSigns() > 5000);
+        System.out.println(over5k);
+    }
+
+    public static void met9() {
+        boolean over5tags = posts.stream()
+                .map(post -> post.getTags().split(","))
+                .anyMatch(tags -> tags.length > 5);
+        System.out.println(over5tags);
+    }
+
+    public static void met10() {
+        Optional<String> java = posts.stream()
+                .filter(post -> post.getSubject().contains("Java"))
+                .map(Post::getSubject)
+                .findFirst();
+        java.ifPresent(System.out::println);
+    }
+
+    public static void met11() {
+        Optional<String> java = posts.stream()
+                .filter(post -> post.getSubject().contains("elemelek"))
+                .map(Post::getSubject)
+                .findAny();
+        java.ifPresent(System.out::println);
+    }
+
+    public static void met12() {
+        List<String> subjects = posts.stream()
+                .map(Post::getSubject)
+                .collect(Collectors.toList());
+        subjects.forEach(System.out::println);
+    }
+
+    public static void met13() {
+        Integer reduce = posts.stream()
+                .map(Post::getAmountOfSigns)
+//                .reduce(Integer::sum)
+                .reduce(0, (p1, p2) -> p1 + p2);
+        System.out.println(reduce);
+    }
+
+    public static void met14() {
+        List<Comment> collect = posts.stream()
+                .flatMap(post -> post.getComments().stream())
+                .collect(Collectors.toList());
+        System.out.println(collect);
+    }
+
+    public static void met15() {
+        List<String> collect = posts.stream()
+                .flatMap(post -> Arrays.stream(post.getTags().toLowerCase().split(",")))
+                .distinct()
+                .collect(Collectors.toList());
+        System.out.println(collect.toString());
     }
 }
