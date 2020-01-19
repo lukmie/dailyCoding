@@ -8,6 +8,8 @@ public class Main {
         Set<Employee> employees = managment.met1();
         employees.forEach(System.out::println);
 
-        System.out.println(managment.met2());
+        System.out.println(managment.met2a());
+        managment.met3a().ifPresent(System.out::println);
+        System.out.println(managment.met3b());
     }
 }
